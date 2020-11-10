@@ -52,7 +52,7 @@ export default function ProductsTable() {
               <TableCell align="right">{formatAsPrice(product.price)}</TableCell>
               <TableCell align="right">{product.count}</TableCell>
               <TableCell align="right">
-                <Button size="small" color="primary" component={Link} to={`/admin/product-form/${product.id}`}>
+                <Button size="small" color="primary" disabled component={Link} to={`/admin/product-form/${product.id}`}>
                   Manage
                 </Button>
                 <Button size="small" color="secondary" onClick={() => onDelete(product.id)}>
