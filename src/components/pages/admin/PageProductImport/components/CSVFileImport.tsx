@@ -41,9 +41,12 @@ export default function CSVFileImport({url, title}: CSVFileImportProps) {
       })
       console.log('File to upload: ', file.name)
       console.log('Uploading to: ', response.data)
+      const headers = new Headers();
+      headers.append('Content-Type', 'text/csv');
       const result = await fetch(response.data, {
         method: 'PUT',
-        body: file
+        body: file,
+        headers
       })
       console.log('Result: ', result)
       setFile('');
