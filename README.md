@@ -1,6 +1,3 @@
-## Backend part located here:
-https://github.com/OlgaGnatenko/nodejs-aws-be/pull/1
-
 ## Project links 
 
 Product list available here:
