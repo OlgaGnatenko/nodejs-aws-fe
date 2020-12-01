@@ -17,12 +17,12 @@ axios.interceptors.response.use(
       alert(error.response.data?.data);
     }
     if (error.response?.status === 401) {
-      const { message } = error.response?.body;
-      alert(`Unauthorized: ${message}`);
+      const message = error?.response?.body?.message;
+      alert(`Unauthorized ${message || ''}`);
     }    
     if (error.response?.status === 403) {
-      const { message } = error.response?.body;
-      alert(`Forbiddeen: ${message}`);
+      const message = error?.response?.body?.message;
+      alert(`Forbidden ${message || ''}`);
     }     
     return Promise.reject(error.response);
   }
