@@ -16,6 +16,14 @@ axios.interceptors.response.use(
     if (error.response?.status === 400) {
       alert(error.response.data?.data);
     }
+    if (error.response?.status === 401) {
+      const { message } = error.response?.body;
+      alert(`Unauthorized: ${message}`);
+    }    
+    if (error.response?.status === 403) {
+      const { message } = error.response?.body;
+      alert(`Forbiddeen: ${message}`);
+    }     
     return Promise.reject(error.response);
   }
 );
